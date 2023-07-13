@@ -1,0 +1,148 @@
+
+<div class="container-fluid">
+  <div class="row row-1">
+    <div class="col-8 col-md-12 col-sm-12 admission-title">
+        <div class="admin-title"style="margin-bottom: 20px;">
+          <h2 >Admission Director Dashboard</h2>
+          <h5 class="h6 mt-3">Welcome, {{ username }}</h5 >
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" style="margin-top: -100px;" >ADD</button>
+        </div>
+
+    </div>
+  </div>
+  <div class="row row-2 mt-5" >
+    <div class="col-lg-6 col-md-12 col-sm-12 graph-container">
+        <canvasjs-chart [options]="chartOptions" [styles]="{width: '90%', height: '180px'}"></canvasjs-chart>
+    </div>
+    
+    <div class="col-lg-3 col-md-12 col-sm-12 cost ">
+      <div class="image-container" style="margin-top: 10px; margin-left: 10px;">
+        <img src="../../assets/images/512px-Indian_Rupee_symbol_in_circle_PD_version.svg.png" alt="amount" style="height: 100px; width: 100px;">
+      </div>
+      <div class="sub-text">
+        <h5>Total Cost</h5>
+      <h2>₹ 2,345</h2>
+      </div>
+      <div class="projects">
+        <h6>Project A: ₹1,200</h6>
+        <h6>Project B: ₹1,145</h6>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12">
+      <div class="calendar calendar-first" id="calendar_first">
+        <div class="calendar_header">
+            <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
+             <h2></h2>
+            <button class="switch-month switch-right"> <i class="fa fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar_weekdays"></div>
+        <div class="calendar_content"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4 row-3">
+    <div class="col-lg-4 col-md-12 col-sm-12 count mr-4 ml-4 mb-1" style="width: 500px; box-shadow: 1px 2px 8px rgb(127, 131, 131); border-radius: 10px;">
+      <div class="count-title mt-1">
+        <h5>Enrollment Count</h5>
+      </div>
+      <div class="row">
+        <div class="graph-1">
+          <circle-progress *ngIf="!destroyed" name="A"  [renderOnClick]="false" class="copy"
+        ></circle-progress>        
+        </div>
+        <div class="graph-2" >
+          <circle-progress *ngIf="!destroyed" name="G"  [renderOnClick]="false" class="copy"
+        ></circle-progress>
+        </div>
+      </div>
+      <div class="column-1">
+        <h6>Elementary School</h6>
+      </div>
+      <div class="column-2">
+        <h6>Middle School</h6>
+      </div>
+      <div class="names">
+        <p>Akshay M</p>
+        <p>Shubham K</p>
+        <p>Suraj N</p>
+
+      </div>
+      <div class="checkpng">
+        <div class="checkpng-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+        </div>
+        <div class="checkpng-2 mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+        </div>
+        <div class="checkpng-3 mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12 sources mr-4 mb-1" style="box-shadow: 1px 2px 8px rgb(127, 131, 131); border-radius: 10px;">
+      <div class="source-title mt-2">
+        <h5>Lead by Sources</h5>
+      </div>
+      <div class="progress-bars">
+        <div class="facebook mt-5">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          Facebook Ads
+        </div>
+        <div class="google mt-3">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 58%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          Google Ads
+        </div>
+        <div class="organic mt-3">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          Organic
+        </div>
+        <div class="onsite mt-3">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 68%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          Onsite Campaigns
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 inquiries mb-1" style="box-shadow: 1px 2px 8px rgb(127, 131, 131); width: 500px; border-radius: 10px;">
+      <div class="inquiries-title mt-2">
+        <h5>Inquiries</h5>
+      </div>
+      <div class="inq-count">
+        <div class="count-container-block">
+          <p class="count-block">count:  </p>
+        </div>
+        <div class="count-num-container">
+          <h1 style="color: rgb(64, 64, 133);">489</h1>
+        </div>
+      </div>
+      <div class="inquiry-names mt-3 ml-4">
+        <p>Pradnya S</p>
+        <p>Kalpesh Wani</p>
+        <p>Renuka Y</p>
+        <p>Suyash</p>
+        <p>Omkar</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/popper.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/main.js"></script>
